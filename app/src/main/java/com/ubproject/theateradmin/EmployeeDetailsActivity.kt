@@ -17,7 +17,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     private lateinit var tvCoverImg: TextView
     private lateinit var tvLanguage: TextView
 //    private lateinit var tvDuration: TextView
-//    private lateinit var tvMovieName: TextView
+    private lateinit var tvMovieName: TextView
 //    private lateinit var tvRating: TextView
 //    private lateinit var tvReleaseDate: TextView
     private lateinit var btnUpdate: Button
@@ -53,7 +53,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         tvCoverImg = findViewById(R.id.tvCoverImgUrl)
         tvLanguage = findViewById(R.id.tvLang)
 //        tvDuration = findViewById(R.id.tvDuration)
-//        tvMovieName = findViewById(R.id.tvMovieName)
+        tvMovieName = findViewById(R.id.tvMovieName)
 //        tvRating = findViewById(R.id.tvRating)
 //        tvReleaseDate = findViewById(R.id.tvReleaseDate)
 
@@ -68,7 +68,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         tvCoverImg.text = intent.getStringExtra("cover_image_url")
         tvLanguage.text = intent.getStringExtra("languages")
 //        tvDuration.text = intent.getStringExtra("movie_duration")
-//        tvMovieName.text = intent.getStringExtra("movie_name")
+        tvMovieName.text = intent.getStringExtra("movie_name")
 //        tvRating.text = intent.getStringExtra("no_of_ratings")
 //        tvReleaseDate.text = intent.getStringExtra("release_date")
 
@@ -106,7 +106,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         val etCoverImg = mDialogView.findViewById<EditText>(R.id.etCoverImgUrl)
         val etLanguage = mDialogView.findViewById<EditText>(R.id.etLanguages)
 //        val etMovieDuration = mDialogView.findViewById<EditText>(R.id.etDuration)
-//        val etMovieName = mDialogView.findViewById<EditText>(R.id.etMovieName)
+        val etMovieName = mDialogView.findViewById<EditText>(R.id.etMovieName)
 //        val etRating = mDialogView.findViewById<EditText>(R.id.etRating)
 //        val etReleaseDate = mDialogView.findViewById<EditText>(R.id.etReleaseDate)
 
@@ -117,7 +117,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         etCoverImg.setText(intent.getStringExtra("cover_image_url").toString())
         etLanguage.setText(intent.getStringExtra("languages").toString())
 //        etMovieDuration.setText(intent.getStringExtra("movie_duration").toString())
-//        etMovieName.setText(intent.getStringExtra("movie_name").toString())
+        etMovieName.setText(intent.getStringExtra("movie_name").toString())
 //        etRating.setText(intent.getStringExtra("no_of_ratings").toString())
 //        etReleaseDate.setText(intent.getStringExtra("release_date").toString())
 
@@ -133,6 +133,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
                 etBannerImg.text.toString(),
                 etCoverImg.text.toString(),
                 etLanguage.text.toString(),
+                etMovieName.text.toString(),
 
                 )
 
@@ -143,6 +144,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             tvBannerImg.text = etBannerImg.text.toString()
             tvCoverImg.text = etCoverImg.text.toString()
             tvLanguage.text = etLanguage.text.toString()
+            tvMovieName.text = etMovieName.text.toString()
+
 
 
             alertDialog.dismiss()
@@ -154,7 +157,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         about_movie: String,
         banner_image_url: String,
         cover_image_url: String,
-        languages: String
+        languages: String,
+        movie_name: String
 
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(id)
@@ -163,7 +167,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             about_movie,
             banner_image_url,
             cover_image_url,
-            languages
+            languages,
+            movie_name
         )
         dbRef.setValue(empInfo)
     }

@@ -10,7 +10,7 @@
     <string name="rating">Add no. of rating out of 10</string>
     <string name="rdate">Add movie release date</string>
     <string name="add">Add New Movie</string>
-    <string name="update">Update Movie Details</string>
+    <string name="update">View/Update Movie</string>
     <string name="theater">Theater Admin App</string>
     <string name="theater_user">Add Movie In Online Movie Booking User App</string>
 </resources>

@@ -16,7 +16,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     private lateinit var tvBannerImg: TextView
     private lateinit var tvCoverImg: TextView
     private lateinit var tvLanguage: TextView
-//    private lateinit var tvDuration: TextView
+    private lateinit var tvDuration: TextView
     private lateinit var tvMovieName: TextView
 //    private lateinit var tvRating: TextView
 //    private lateinit var tvReleaseDate: TextView
@@ -52,7 +52,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         tvBannerImg = findViewById(R.id.tvBannerImgUrl)
         tvCoverImg = findViewById(R.id.tvCoverImgUrl)
         tvLanguage = findViewById(R.id.tvLang)
-//        tvDuration = findViewById(R.id.tvDuration)
+        tvDuration = findViewById(R.id.tvDuration)
         tvMovieName = findViewById(R.id.tvMovieName)
 //        tvRating = findViewById(R.id.tvRating)
 //        tvReleaseDate = findViewById(R.id.tvReleaseDate)
@@ -67,7 +67,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         tvBannerImg.text = intent.getStringExtra("banner_image_url")
         tvCoverImg.text = intent.getStringExtra("cover_image_url")
         tvLanguage.text = intent.getStringExtra("languages")
-//        tvDuration.text = intent.getStringExtra("movie_duration")
+        tvDuration.text = intent.getStringExtra("movie_duration")
         tvMovieName.text = intent.getStringExtra("movie_name")
 //        tvRating.text = intent.getStringExtra("no_of_ratings")
 //        tvReleaseDate.text = intent.getStringExtra("release_date")
@@ -105,7 +105,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         val etBannerImg = mDialogView.findViewById<EditText>(R.id.etBannerImgUrl)
         val etCoverImg = mDialogView.findViewById<EditText>(R.id.etCoverImgUrl)
         val etLanguage = mDialogView.findViewById<EditText>(R.id.etLanguages)
-//        val etMovieDuration = mDialogView.findViewById<EditText>(R.id.etDuration)
+        val etMovieDuration = mDialogView.findViewById<EditText>(R.id.etDuration)
         val etMovieName = mDialogView.findViewById<EditText>(R.id.etMovieName)
 //        val etRating = mDialogView.findViewById<EditText>(R.id.etRating)
 //        val etReleaseDate = mDialogView.findViewById<EditText>(R.id.etReleaseDate)
@@ -116,7 +116,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         etBannerImg.setText(intent.getStringExtra("banner_image_url").toString())
         etCoverImg.setText(intent.getStringExtra("cover_image_url").toString())
         etLanguage.setText(intent.getStringExtra("languages").toString())
-//        etMovieDuration.setText(intent.getStringExtra("movie_duration").toString())
+        etMovieDuration.setText(intent.getStringExtra("movie_duration").toString())
         etMovieName.setText(intent.getStringExtra("movie_name").toString())
 //        etRating.setText(intent.getStringExtra("no_of_ratings").toString())
 //        etReleaseDate.setText(intent.getStringExtra("release_date").toString())
@@ -134,6 +134,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
                 etCoverImg.text.toString(),
                 etLanguage.text.toString(),
                 etMovieName.text.toString(),
+                etMovieDuration.text.toString(),
 
                 )
 
@@ -145,6 +146,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             tvCoverImg.text = etCoverImg.text.toString()
             tvLanguage.text = etLanguage.text.toString()
             tvMovieName.text = etMovieName.text.toString()
+            tvDuration.text = etMovieDuration.text.toString()
 
 
 
@@ -158,7 +160,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         banner_image_url: String,
         cover_image_url: String,
         languages: String,
-        movie_name: String
+        movie_name: String,
+        movie_duration: String
 
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(id)
@@ -168,7 +171,8 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             banner_image_url,
             cover_image_url,
             languages,
-            movie_name
+            movie_name,
+            movie_duration
         )
         dbRef.setValue(empInfo)
     }

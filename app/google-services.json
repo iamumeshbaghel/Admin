@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "526873040023",
+    "firebase_url": "https://online-booking-b039e-default-rtdb.firebaseio.com",
+    "project_id": "online-booking-b039e",
+    "storage_bucket": "online-booking-b039e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526873040023:android:984b3ab0cf23c5240185d2",
+        "android_client_info": {
+          "package_name": "com.ubproject.onlinebooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526873040023-pmv6eoibv0d538ar6jr2lmid58pesc6q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ubproject.onlinebooking",
+            "certificate_hash": "8b4ebc705d0d30ab2a4ee91667523362f84797b8"
+          }
+        },
+        {
+          "client_id": "526873040023-55fhhtajcej04fb7mc4laq2sg37mu6r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzTcqFeQIkgSLsFCkU1MnQNTALuybtJMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526873040023-55fhhtajcej04fb7mc4laq2sg37mu6r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526873040023:android:2b78821705e9c3bb0185d2",
+        "android_client_info": {
+          "package_name": "com.ubproject.theater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526873040023-55fhhtajcej04fb7mc4laq2sg37mu6r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzTcqFeQIkgSLsFCkU1MnQNTALuybtJMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526873040023-55fhhtajcej04fb7mc4laq2sg37mu6r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526873040023:android:bf9b3f98963640bd0185d2",
+        "android_client_info": {
+          "package_name": "com.ubproject.theateradmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526873040023-55fhhtajcej04fb7mc4laq2sg37mu6r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzTcqFeQIkgSLsFCkU1MnQNTALuybtJMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526873040023-55fhhtajcej04fb7mc4laq2sg37mu6r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

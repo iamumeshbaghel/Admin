@@ -1,7 +1,7 @@
 package com.ubproject.theateradmin
 
 data class MovieModel(
-    var empId: String? = null,
+    var movieId: String? = null,
     var about_movie: String? = null,
     var banner_image_url: String? = null,
     var cover_image_url: String? = null,

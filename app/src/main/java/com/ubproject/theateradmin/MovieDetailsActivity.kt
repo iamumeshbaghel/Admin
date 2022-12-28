@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.FirebaseDatabase
 
-class EmployeeDetailsActivity : AppCompatActivity() {
-    private lateinit var tvEmpId: TextView
+class MovieDetailsActivity : AppCompatActivity() {
+    private lateinit var tvMovieId: TextView
     private lateinit var tvAboutMovie: TextView
     private lateinit var tvBannerImg: TextView
     private lateinit var tvCoverImg: TextView
@@ -26,7 +26,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_employee_details)
+        setContentView(R.layout.activity_movie_details)
 
         initView()
         setValuesToViews()
@@ -40,14 +40,14 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
         btnDelete.setOnClickListener {
             deleteRecord(
-                intent.getStringExtra("empId").toString()
+                intent.getStringExtra("movieId").toString()
             )
         }
 
     }
 
     private fun initView() {
-        tvEmpId = findViewById(R.id.tvEmpId)
+        tvMovieId = findViewById(R.id.tvMovieId)
         tvAboutMovie = findViewById(R.id.tvAboutMovie)
         tvBannerImg = findViewById(R.id.tvBannerImgUrl)
         tvCoverImg = findViewById(R.id.tvCoverImgUrl)
@@ -62,7 +62,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     }
 
     private fun setValuesToViews() {
-        tvEmpId.text = intent.getStringExtra("empId")
+        tvMovieId.text = intent.getStringExtra("movieId")
         tvAboutMovie.text = intent.getStringExtra("about_movie")
         tvBannerImg.text = intent.getStringExtra("banner_image_url")
         tvCoverImg.text = intent.getStringExtra("cover_image_url")
@@ -92,7 +92,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     }
 
     private fun openUpdateDialog(
-        empId: String,
+        movieId: String,
         movie_name: String
     ) {
         val mDialog = AlertDialog.Builder(this)
@@ -128,7 +128,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
         btnUpdateData.setOnClickListener {
             updateEmpData(
-                empId,
+                movieId,
                 etAboutMovie.text.toString(),
                 etBannerImg.text.toString(),
                 etCoverImg.text.toString(),
@@ -155,7 +155,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     }
 
     private fun updateEmpData(
-        id: String,
+        movieId: String,
         about_movie: String,
         banner_image_url: String,
         cover_image_url: String,
@@ -164,9 +164,9 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         movie_duration: String
 
     ) {
-        val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(id)
-        val empInfo = MovieModel(
-            id,
+        val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(movieId)
+        val movieInfo = MovieModel(
+            movieId,
             about_movie,
             banner_image_url,
             cover_image_url,
@@ -174,7 +174,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
             movie_name,
             movie_duration
         )
-        dbRef.setValue(empInfo)
+        dbRef.setValue(movieInfo)
     }
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeDetailsActivity">
+    tools:context=".MovieDetailsActivity">
 
     <Button
         android:id="@+id/btnUpdate"
@@ -80,7 +80,7 @@
                 android:layout_weight="1.4">
 
                 <TextView
-                    android:id="@+id/tvEmpId"
+                    android:id="@+id/tvMovieId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

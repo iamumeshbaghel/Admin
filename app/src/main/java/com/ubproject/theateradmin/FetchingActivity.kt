@@ -12,7 +12,7 @@ import com.google.firebase.database.*
 class FetchingActivity : AppCompatActivity() {
     private lateinit var movieRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
-    private lateinit var empList: ArrayList<MovieModel>
+    private lateinit var movieList: ArrayList<MovieModel>
     private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,13 +24,13 @@ class FetchingActivity : AppCompatActivity() {
         movieRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
 
-        empList = arrayListOf<MovieModel>()
+        movieList = arrayListOf<MovieModel>()
 
-        getEmployeesData()
+        getMovieData()
 
     }
 
-    private fun getEmployeesData() {
+    private fun getMovieData() {
 
         movieRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
@@ -39,30 +39,30 @@ class FetchingActivity : AppCompatActivity() {
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                empList.clear()
+                movieList.clear()
                 if (snapshot.exists()){
-                    for (empSnap in snapshot.children){
-                        val empData = empSnap.getValue(MovieModel::class.java)
-                        empList.add(empData!!)
+                    for (movieSnap in snapshot.children){
+                        val movieData = movieSnap.getValue(MovieModel::class.java)
+                        movieList.add(movieData!!)
                     }
-                    val mAdapter = MovieAdapter(empList)
+                    val mAdapter = MovieAdapter(movieList)
                     movieRecyclerView.adapter = mAdapter
 
                     mAdapter.setOnItemClickListener(object : MovieAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
-                            val intent = Intent(this@FetchingActivity, EmployeeDetailsActivity::class.java)
+                            val intent = Intent(this@FetchingActivity, MovieDetailsActivity::class.java)
 
                             //put extras
-                            intent.putExtra("empId", empList[position].empId)
-                            intent.putExtra("about_movie", empList[position].about_movie)
-                            intent.putExtra("banner_image_url", empList[position].banner_image_url)
-                            intent.putExtra("cover_image_url", empList[position].cover_image_url)
-                            intent.putExtra("languages", empList[position].languages)
-                            intent.putExtra("movie_duration", empList[position].movie_duration)
-                            intent.putExtra("movie_name", empList[position].movie_name)
-//                            intent.putExtra("no_of_ratings", empList[position].no_of_ratings)
-//                            intent.putExtra("release_date", empList[position].release_date)
+                            intent.putExtra("empId", movieList[position].movieId)
+                            intent.putExtra("about_movie", movieList[position].about_movie)
+                            intent.putExtra("banner_image_url", movieList[position].banner_image_url)
+                            intent.putExtra("cover_image_url", movieList[position].cover_image_url)
+                            intent.putExtra("languages", movieList[position].languages)
+                            intent.putExtra("movie_duration", movieList[position].movie_duration)
+                            intent.putExtra("movie_name", movieList[position].movie_name)
+//                            intent.putExtra("no_of_ratings", movieList[position].no_of_ratings)
+//                            intent.putExtra("release_date", movieList[position].release_date)
                             startActivity(intent)
                         }
 

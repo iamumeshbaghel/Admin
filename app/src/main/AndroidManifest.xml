@@ -14,7 +14,7 @@
         android:theme="@style/Theme.TheaterAdmin"
         tools:targetApi="31">
         <activity
-            android:name=".EmployeeDetailsActivity"
+            android:name=".MovieDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".FetchingActivity"

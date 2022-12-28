@@ -79,11 +79,11 @@ class InsertionActivity : AppCompatActivity() {
 //        if (release_date.isEmpty()) {
 //            etReleaseDate.error = "Add Release Date"
 //        }
-        val empId = dbRef.push().key!!
+        val movieId = dbRef.push().key!!
 
-        val employee = MovieModel(empId, about_movie, banner_image_url, cover_image_url, languages, movie_duration, movie_name)
+        val movie = MovieModel(movieId, about_movie, banner_image_url, cover_image_url, languages, movie_duration, movie_name)
 
-        dbRef.child(empId).setValue(employee)
+        dbRef.child(movieId).setValue(movie)
             .addOnCompleteListener {
                 Toast.makeText(this, "Movie Added successfully", Toast.LENGTH_LONG).show()
 

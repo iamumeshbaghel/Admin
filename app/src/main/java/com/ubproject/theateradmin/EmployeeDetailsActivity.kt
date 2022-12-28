@@ -34,7 +34,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         btnUpdate.setOnClickListener {
             openUpdateDialog(
                 intent.getStringExtra("empId").toString(),
-                intent.getStringExtra("about_movie").toString()
+                intent.getStringExtra("movie_name").toString()
             )
         }
 
@@ -81,7 +81,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {
-            Toast.makeText(this, "Employee data deleted", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Movie Deleted Successfully!", Toast.LENGTH_LONG).show()
 
             val intent = Intent(this, FetchingActivity::class.java)
             finish()
@@ -93,7 +93,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
     private fun openUpdateDialog(
         empId: String,
-        about_movie: String
+        movie_name: String
     ) {
         val mDialog = AlertDialog.Builder(this)
         val inflater = layoutInflater
@@ -121,7 +121,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 //        etRating.setText(intent.getStringExtra("no_of_ratings").toString())
 //        etReleaseDate.setText(intent.getStringExtra("release_date").toString())
 
-        mDialog.setTitle("Updating $about_movie Record")
+        mDialog.setTitle("$movie_name ")
 
         val alertDialog = mDialog.create()
         alertDialog.show()
@@ -138,7 +138,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
 
                 )
 
-            Toast.makeText(applicationContext, "Employee Data Updated", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Movie Updated Successfully!", Toast.LENGTH_LONG).show()
 
             //we are setting updated data to our textviews
             tvAboutMovie.text = etAboutMovie.text.toString()

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="16dp"
+        android:padding="10dp"
         android:layout_gravity="center"
         android:orientation="vertical">
 
@@ -25,12 +25,13 @@
                 android:id="@+id/tvMovieName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Emp Name"
+                android:text="Movie Name"
+                android:fontFamily="@font/manrope_bold"
                 android:maxLines="1"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="30sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 

@@ -85,7 +85,7 @@ class InsertionActivity : AppCompatActivity() {
 
         dbRef.child(empId).setValue(employee)
             .addOnCompleteListener {
-                Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Movie Added successfully", Toast.LENGTH_LONG).show()
 
                 etAboutMovie.text.clear()
                 etBannerImage.text.clear()

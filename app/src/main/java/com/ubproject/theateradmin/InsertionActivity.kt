@@ -15,7 +15,7 @@ class InsertionActivity : AppCompatActivity() {
     private lateinit var etLanguages: EditText
     private lateinit var etMovieDuration: EditText
     private lateinit var etMovieName: EditText
-//    private lateinit var etRating: EditText
+    private lateinit var etRating: EditText
     private lateinit var etReleaseDate: EditText
     private lateinit var btnSaveData: Button
 

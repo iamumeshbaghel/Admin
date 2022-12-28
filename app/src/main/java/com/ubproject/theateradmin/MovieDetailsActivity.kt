@@ -19,7 +19,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var tvDuration: TextView
     private lateinit var tvMovieName: TextView
 //    private lateinit var tvRating: TextView
-//    private lateinit var tvReleaseDate: TextView
+    private lateinit var tvReleaseDate: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
@@ -55,7 +55,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         tvDuration = findViewById(R.id.tvDuration)
         tvMovieName = findViewById(R.id.tvMovieName)
 //        tvRating = findViewById(R.id.tvRating)
-//        tvReleaseDate = findViewById(R.id.tvReleaseDate)
+        tvReleaseDate = findViewById(R.id.tvReleaseDate)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
@@ -70,7 +70,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         tvDuration.text = intent.getStringExtra("movie_duration")
         tvMovieName.text = intent.getStringExtra("movie_name")
 //        tvRating.text = intent.getStringExtra("no_of_ratings")
-//        tvReleaseDate.text = intent.getStringExtra("release_date")
+        tvReleaseDate.text = intent.getStringExtra("release_date")
 
     }
 
@@ -108,7 +108,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         val etMovieDuration = mDialogView.findViewById<EditText>(R.id.etDuration)
         val etMovieName = mDialogView.findViewById<EditText>(R.id.etMovieName)
 //        val etRating = mDialogView.findViewById<EditText>(R.id.etRating)
-//        val etReleaseDate = mDialogView.findViewById<EditText>(R.id.etReleaseDate)
+        val etReleaseDate = mDialogView.findViewById<EditText>(R.id.etReleaseDate)
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
@@ -119,7 +119,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         etMovieDuration.setText(intent.getStringExtra("movie_duration").toString())
         etMovieName.setText(intent.getStringExtra("movie_name").toString())
 //        etRating.setText(intent.getStringExtra("no_of_ratings").toString())
-//        etReleaseDate.setText(intent.getStringExtra("release_date").toString())
+        etReleaseDate.setText(intent.getStringExtra("release_date").toString())
 
         mDialog.setTitle("$movie_name ")
 
@@ -133,8 +133,10 @@ class MovieDetailsActivity : AppCompatActivity() {
                 etBannerImg.text.toString(),
                 etCoverImg.text.toString(),
                 etLanguage.text.toString(),
-                etMovieName.text.toString(),
                 etMovieDuration.text.toString(),
+                etMovieName.text.toString(),
+                etReleaseDate.text.toString(),
+
 
                 )
 
@@ -145,9 +147,9 @@ class MovieDetailsActivity : AppCompatActivity() {
             tvBannerImg.text = etBannerImg.text.toString()
             tvCoverImg.text = etCoverImg.text.toString()
             tvLanguage.text = etLanguage.text.toString()
-            tvMovieName.text = etMovieName.text.toString()
             tvDuration.text = etMovieDuration.text.toString()
-
+            tvMovieName.text = etMovieName.text.toString()
+            tvReleaseDate.text = etReleaseDate.text.toString()
 
 
             alertDialog.dismiss()
@@ -161,7 +163,8 @@ class MovieDetailsActivity : AppCompatActivity() {
         cover_image_url: String,
         languages: String,
         movie_name: String,
-        movie_duration: String
+        movie_duration: String,
+        release_date: String
 
     ) {
         val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(movieId)
@@ -172,7 +175,8 @@ class MovieDetailsActivity : AppCompatActivity() {
             cover_image_url,
             languages,
             movie_name,
-            movie_duration
+            movie_duration,
+            release_date
         )
         dbRef.setValue(movieInfo)
     }

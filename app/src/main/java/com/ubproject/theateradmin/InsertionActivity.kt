@@ -16,7 +16,7 @@ class InsertionActivity : AppCompatActivity() {
     private lateinit var etMovieDuration: EditText
     private lateinit var etMovieName: EditText
 //    private lateinit var etRating: EditText
-//    private lateinit var etReleaseDate: EditText
+    private lateinit var etReleaseDate: EditText
     private lateinit var btnSaveData: Button
 
     private lateinit var dbRef: DatabaseReference
@@ -32,18 +32,18 @@ class InsertionActivity : AppCompatActivity() {
         etMovieDuration = findViewById(R.id.etDuration)
         etMovieName = findViewById(R.id.etMovieName)
 //        etRating = findViewById(R.id.etRating)
-//        etReleaseDate = findViewById(R.id.etReleaseDate)
+        etReleaseDate = findViewById(R.id.etReleaseDate)
 
         btnSaveData = findViewById(R.id.btnSave)
 
         dbRef = FirebaseDatabase.getInstance().getReference("Movie")
 
         btnSaveData.setOnClickListener {
-            saveEmployeeData()
+            saveMovieData()
         }
     }
 
-    private fun saveEmployeeData() {
+    private fun saveMovieData() {
 
         //getting values
         val about_movie = etAboutMovie.text.toString()
@@ -53,7 +53,7 @@ class InsertionActivity : AppCompatActivity() {
         val movie_name = etMovieName.text.toString()
         val movie_duration = etMovieDuration.text.toString()
 //        val no_of_ratings = etRating.text.toString()
-//        val release_date = etReleaseDate.text.toString()
+        val release_date = etReleaseDate.text.toString()
 
         if (about_movie.isEmpty()) {
             etAboutMovie.error = "About the movie required!"
@@ -76,12 +76,12 @@ class InsertionActivity : AppCompatActivity() {
 //        if (no_of_ratings.isEmpty()) {
 //            etRating.error = "Add Rating out of 10"
 //        }
-//        if (release_date.isEmpty()) {
-//            etReleaseDate.error = "Add Release Date"
-//        }
+        if (release_date.isEmpty()) {
+            etReleaseDate.error = "Add Release Date"
+        }
         val movieId = dbRef.push().key!!
 
-        val movie = MovieModel(movieId, about_movie, banner_image_url, cover_image_url, languages, movie_duration, movie_name)
+        val movie = MovieModel(movieId, about_movie, banner_image_url, cover_image_url, languages, movie_duration, movie_name, release_date)
 
         dbRef.child(movieId).setValue(movie)
             .addOnCompleteListener {
@@ -94,7 +94,7 @@ class InsertionActivity : AppCompatActivity() {
                 etMovieDuration.text.clear()
                 etMovieName.text.clear()
 //                etRating.text.clear()
-//                etReleaseDate.text.clear()
+                etReleaseDate.text.clear()
 
 
             }.addOnFailureListener { err ->

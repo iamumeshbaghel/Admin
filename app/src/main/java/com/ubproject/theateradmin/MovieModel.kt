@@ -7,7 +7,7 @@ data class MovieModel(
     var cover_image_url: String? = null,
     var languages: String? = null,
     var movie_duration: String? = null,
-    var movie_name: String? = null
+    var movie_name: String? = null,
 //    var no_of_ratings: String? = null
-//    var release_date: String? = null
+    var release_date: String? = null
 )

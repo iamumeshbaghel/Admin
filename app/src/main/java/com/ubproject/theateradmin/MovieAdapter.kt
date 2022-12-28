@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class EmpAdapter(private val empList: ArrayList<MovieModel>) :
-    RecyclerView.Adapter<EmpAdapter.ViewHolder>() {
+class MovieAdapter(private val empList: ArrayList<MovieModel>) :
+    RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
 

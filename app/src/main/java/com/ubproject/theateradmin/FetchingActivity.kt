@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
 class FetchingActivity : AppCompatActivity() {
-    private lateinit var empRecyclerView: RecyclerView
+    private lateinit var movieRecyclerView: RecyclerView
     private lateinit var tvLoadingData: TextView
     private lateinit var empList: ArrayList<MovieModel>
     private lateinit var dbRef: DatabaseReference
@@ -19,9 +19,9 @@ class FetchingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fetching)
 
-        empRecyclerView = findViewById(R.id.rvEmp)
-        empRecyclerView.layoutManager = LinearLayoutManager(this)
-        empRecyclerView.setHasFixedSize(true)
+        movieRecyclerView = findViewById(R.id.rvEmp)
+        movieRecyclerView.layoutManager = LinearLayoutManager(this)
+        movieRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
 
         empList = arrayListOf<MovieModel>()
@@ -32,7 +32,7 @@ class FetchingActivity : AppCompatActivity() {
 
     private fun getEmployeesData() {
 
-        empRecyclerView.visibility = View.GONE
+        movieRecyclerView.visibility = View.GONE
         tvLoadingData.visibility = View.VISIBLE
 
         dbRef = FirebaseDatabase.getInstance().getReference("Movie")
@@ -45,10 +45,10 @@ class FetchingActivity : AppCompatActivity() {
                         val empData = empSnap.getValue(MovieModel::class.java)
                         empList.add(empData!!)
                     }
-                    val mAdapter = EmpAdapter(empList)
-                    empRecyclerView.adapter = mAdapter
+                    val mAdapter = MovieAdapter(empList)
+                    movieRecyclerView.adapter = mAdapter
 
-                    mAdapter.setOnItemClickListener(object : EmpAdapter.onItemClickListener{
+                    mAdapter.setOnItemClickListener(object : MovieAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
 
                             val intent = Intent(this@FetchingActivity, EmployeeDetailsActivity::class.java)
@@ -68,7 +68,7 @@ class FetchingActivity : AppCompatActivity() {
 
                     })
 
-                    empRecyclerView.visibility = View.VISIBLE
+                    movieRecyclerView.visibility = View.VISIBLE
                     tvLoadingData.visibility = View.GONE
                 }
             }

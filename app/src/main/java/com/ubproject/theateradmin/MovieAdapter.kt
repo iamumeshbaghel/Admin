@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MovieAdapter(private val empList: ArrayList<MovieModel>) :
+class MovieAdapter(private val movieList: ArrayList<MovieModel>) :
     RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     private lateinit var mListener: onItemClickListener
@@ -25,12 +25,12 @@ class MovieAdapter(private val empList: ArrayList<MovieModel>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentEmp = empList[position]
-        holder.tvMovieName.text = currentEmp.movie_name
+        val currentMovie = movieList[position]
+        holder.tvMovieName.text = currentMovie.movie_name
     }
 
     override fun getItemCount(): Int {
-        return empList.size
+        return movieList.size
     }
 
     class ViewHolder(itemView: View, clickListener: onItemClickListener) : RecyclerView.ViewHolder(itemView) {

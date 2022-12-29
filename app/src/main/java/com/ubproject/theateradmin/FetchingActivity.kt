@@ -19,7 +19,7 @@ class FetchingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fetching)
 
-        movieRecyclerView = findViewById(R.id.rvEmp)
+        movieRecyclerView = findViewById(R.id.rvMovie)
         movieRecyclerView.layoutManager = LinearLayoutManager(this)
         movieRecyclerView.setHasFixedSize(true)
         tvLoadingData = findViewById(R.id.tvLoadingData)
@@ -54,7 +54,7 @@ class FetchingActivity : AppCompatActivity() {
                             val intent = Intent(this@FetchingActivity, MovieDetailsActivity::class.java)
 
                             //put extras
-                            intent.putExtra("empId", movieList[position].movieId)
+                            intent.putExtra("movieId", movieList[position].movieId)
                             intent.putExtra("about_movie", movieList[position].about_movie)
                             intent.putExtra("banner_image_url", movieList[position].banner_image_url)
                             intent.putExtra("cover_image_url", movieList[position].cover_image_url)

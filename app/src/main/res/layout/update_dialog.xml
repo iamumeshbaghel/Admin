@@ -133,7 +133,25 @@ android:background="@color/background">
                 android:fontFamily="@font/manrope_regular"
                 android:inputType="textMultiLine|textFilter" />
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:textColorHint="@color/black"
+            android:hint="@string/rating">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRating"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/manrope_regular"
+                android:inputType="textMultiLine|textFilter" />
 
+        </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textField7"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

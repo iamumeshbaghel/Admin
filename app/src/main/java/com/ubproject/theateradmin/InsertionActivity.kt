@@ -15,6 +15,7 @@ class InsertionActivity : AppCompatActivity() {
     private lateinit var etLanguages: EditText
     private lateinit var etMovieDuration: EditText
     private lateinit var etMovieName: EditText
+    private lateinit var etRating: EditText
     private lateinit var etReleaseDate: EditText
     private lateinit var btnSaveData: Button
 
@@ -30,6 +31,7 @@ class InsertionActivity : AppCompatActivity() {
         etLanguages = findViewById(R.id.etLanguages)
         etMovieDuration = findViewById(R.id.etDuration)
         etMovieName = findViewById(R.id.etMovieName)
+//        etRating = findViewById(R.id.etRating)
         etReleaseDate = findViewById(R.id.etReleaseDate)
 
         btnSaveData = findViewById(R.id.btnSave)
@@ -50,6 +52,7 @@ class InsertionActivity : AppCompatActivity() {
         val languages = etLanguages.text.toString()
         val movie_name = etMovieName.text.toString()
         val movie_duration = etMovieDuration.text.toString()
+//        val no_of_ratings = etRating.text.toString()
         val release_date = etReleaseDate.text.toString()
 
         if (about_movie.isEmpty()) {
@@ -70,6 +73,9 @@ class InsertionActivity : AppCompatActivity() {
         if (movie_name.isEmpty()) {
             etMovieName.error = "Movie Name is Required!"
         }
+//        if (no_of_ratings.isEmpty()) {
+//            etRating.error = "Add Rating out of 10"
+//        }
         if (release_date.isEmpty()) {
             etReleaseDate.error = "Add Release Date"
         }
@@ -87,6 +93,7 @@ class InsertionActivity : AppCompatActivity() {
                 etLanguages.text.clear()
                 etMovieDuration.text.clear()
                 etMovieName.text.clear()
+//                etRating.text.clear()
                 etReleaseDate.text.clear()
 
 

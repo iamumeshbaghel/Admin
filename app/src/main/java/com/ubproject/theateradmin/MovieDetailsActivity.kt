@@ -33,7 +33,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener {
             openUpdateDialog(
-                intent.getStringExtra("empId").toString(),
+                intent.getStringExtra("movieId").toString(),
                 intent.getStringExtra("movie_name").toString()
             )
         }
@@ -75,9 +75,9 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun deleteRecord(
-        id: String
+        movieId: String
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(id)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Movie").child(movieId)
         val mTask = dbRef.removeValue()
 
         mTask.addOnSuccessListener {

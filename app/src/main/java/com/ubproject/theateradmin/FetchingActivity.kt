@@ -61,7 +61,7 @@ class FetchingActivity : AppCompatActivity() {
                             intent.putExtra("languages", movieList[position].languages)
                             intent.putExtra("movie_duration", movieList[position].movie_duration)
                             intent.putExtra("movie_name", movieList[position].movie_name)
-//                            intent.putExtra("no_of_ratings", movieList[position].no_of_ratings)
+//                            intent.putExtra("no_of_ratings", movieList[position].rating)
                             intent.putExtra("release_date", movieList[position].release_date)
                             startActivity(intent)
                         }

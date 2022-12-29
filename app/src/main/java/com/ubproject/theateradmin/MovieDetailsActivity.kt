@@ -18,7 +18,6 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var tvLanguage: TextView
     private lateinit var tvDuration: TextView
     private lateinit var tvMovieName: TextView
-//    private lateinit var tvRating: TextView
     private lateinit var tvReleaseDate: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
@@ -54,7 +53,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         tvLanguage = findViewById(R.id.tvLang)
         tvDuration = findViewById(R.id.tvDuration)
         tvMovieName = findViewById(R.id.tvMovieName)
-//        tvRating = findViewById(R.id.tvRating)
         tvReleaseDate = findViewById(R.id.tvReleaseDate)
 
         btnUpdate = findViewById(R.id.btnUpdate)
@@ -69,7 +67,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         tvLanguage.text = intent.getStringExtra("languages")
         tvDuration.text = intent.getStringExtra("movie_duration")
         tvMovieName.text = intent.getStringExtra("movie_name")
-//        tvRating.text = intent.getStringExtra("no_of_ratings")
         tvReleaseDate.text = intent.getStringExtra("release_date")
 
     }
@@ -107,7 +104,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         val etLanguage = mDialogView.findViewById<EditText>(R.id.etLanguages)
         val etMovieDuration = mDialogView.findViewById<EditText>(R.id.etDuration)
         val etMovieName = mDialogView.findViewById<EditText>(R.id.etMovieName)
-//        val etRating = mDialogView.findViewById<EditText>(R.id.etRating)
         val etReleaseDate = mDialogView.findViewById<EditText>(R.id.etReleaseDate)
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
@@ -118,7 +114,6 @@ class MovieDetailsActivity : AppCompatActivity() {
         etLanguage.setText(intent.getStringExtra("languages").toString())
         etMovieDuration.setText(intent.getStringExtra("movie_duration").toString())
         etMovieName.setText(intent.getStringExtra("movie_name").toString())
-//        etRating.setText(intent.getStringExtra("no_of_ratings").toString())
         etReleaseDate.setText(intent.getStringExtra("release_date").toString())
 
         mDialog.setTitle("$movie_name ")
@@ -142,7 +137,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
             Toast.makeText(applicationContext, "Movie Updated Successfully!", Toast.LENGTH_LONG).show()
 
-            //we are setting updated data to our textviews
+            //Setting updated data to our TextView Field
             tvAboutMovie.text = etAboutMovie.text.toString()
             tvBannerImg.text = etBannerImg.text.toString()
             tvCoverImg.text = etCoverImg.text.toString()

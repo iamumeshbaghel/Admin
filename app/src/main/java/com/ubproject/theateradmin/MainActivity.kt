@@ -1,31 +1,28 @@
 package com.ubproject.theateradmin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.RelativeLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var btnInsertData: Button
-    private lateinit var btnFetchData: Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btnInsertData = findViewById(R.id.btnInsertData)
-        btnFetchData = findViewById(R.id.btnFetchData)
 
-        btnInsertData.setOnClickListener {
+        val btnInsert = findViewById<View>(R.id.cvInsert)
+        btnInsert.setOnClickListener {
             val intent = Intent(this, InsertionActivity::class.java)
             startActivity(intent)
         }
-
-        btnFetchData.setOnClickListener {
+        val btnFetch = findViewById<View>(R.id.cvFetch)
+        btnFetch.setOnClickListener {
             val intent = Intent(this, FetchingActivity::class.java)
             startActivity(intent)
         }
-
     }
 }

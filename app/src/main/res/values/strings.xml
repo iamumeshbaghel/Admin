@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">TheaterAdmin</string>
 
+    <string name="add_movie">Add Movie</string>
     <string name="about_movie">About the movie</string>
-    <string name="bannerUrl">Add banner image Url</string>
-    <string name="coverUrl">Add cover image Url</string>
-    <string name="lang">Add movie languages</string>
+    <string name="bannerUrl">Banner image Url</string>
+    <string name="coverUrl">Cover image Url</string>
+    <string name="lang">Movie languages</string>
     <string name="duration">Duration</string>
-    <string name="mname">Add movie name</string>
-    <string name="rating">Add no. of rating out of 10</string>
-    <string name="rdate">Add movie release date</string>
+    <string name="mname">Movie name</string>
+    <string name="rdate">Release date</string>
     <string name="add">Add New Movie</string>
     <string name="update">View/Update Movie</string>
     <string name="theater">Theater Admin App</string>
     <string name="theater_user">Add Movie In Online Movie Booking User App</string>
     <string name="fetch">Fetch</string>
+    <string name="btnadd">Add</string>
     <string name="insert">Insert</string>
 </resources>

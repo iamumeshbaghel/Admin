@@ -18,19 +18,38 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Movie"
+                android:text="@string/add_movie"
                 android:fontFamily="@font/manrope_extrabold"
                 android:textColor="#000000"
                 android:textSize="25sp"
                 android:gravity="center"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tFMovie"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="8dp"
+                android:textColorHint="@color/white"
 
+                android:hint="@string/mname">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMovieName"
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/manrope_regular"
+                    android:inputType="textMultiLine|textFilter"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textField"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="8dp"
                 android:textColorHint="@color/white"
                 android:hint="@string/about_movie">
@@ -45,55 +64,79 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField1"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColorHint="@color/white"
-                android:hint="@string/bannerUrl">
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:weightSum="2">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etBannerImgUrl"
-                    android:textColor="@color/white"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/manrope_regular"
-                    android:inputType="textMultiLine|textFilter"/>
+                    android:layout_weight="0.6">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColorHint="@color/white"
+                        android:hint="@string/bannerUrl">
 
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField2"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColorHint="@color/white"
-                android:hint="@string/coverUrl"
-                >
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBannerImgUrl"
+                            android:textColor="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope_regular"
+                            android:inputType="textMultiLine|textFilter"/>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etCoverImgUrl"
-                    android:textColor="@color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/manrope_regular"
-                    android:inputType="textMultiLine|textFilter"/>
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField2"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColorHint="@color/white"
+                        android:hint="@string/coverUrl"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCoverImgUrl"
+                            android:textColor="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope_regular"
+                            android:inputType="textMultiLine|textFilter"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textField3"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginBottom="8dp"
                 android:textColorHint="@color/white"
                 android:hint="@string/lang">
@@ -106,77 +149,79 @@
                     android:inputType="textMultiLine|textFilter"/>
 
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField4"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColorHint="@color/white"
-                android:hint="@string/duration">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etDuration"
-                    android:textColor="@color/white"
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/manrope_regular"
-                    android:inputType="textMultiLine|textFilter"/>
+                    android:layout_weight="0.6">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColorHint="@color/white"
+                        android:hint="@string/duration">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etDuration"
+                            android:textColor="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope_regular"
+                            android:inputType="textMultiLine|textFilter"/>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField5"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColorHint="@color/white"
-                android:hint="@string/mname">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etMovieName"
-                    android:textColor="@color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/manrope_regular"
-                    android:inputType="textMultiLine|textFilter"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField7"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:textColorHint="@color/white"
-                android:hint="@string/rdate">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etReleaseDate"
-                    android:textColor="@color/white"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/manrope_regular"
-                    android:inputType="textMultiLine|textFilter"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textField7"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:textColorHint="@color/white"
+                        android:hint="@string/rdate">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etReleaseDate"
+                            android:textColor="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope_regular"
+                            android:inputType="textMultiLine|textFilter"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
 
             <Button
                 android:id="@+id/btnSave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Add"
+                android:text="@string/btnadd"
                 android:textColor="@color/white"
                 android:layout_gravity="bottom"
                 />
-
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

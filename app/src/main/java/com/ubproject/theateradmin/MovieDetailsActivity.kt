@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.database.FirebaseDatabase
 
@@ -21,7 +22,6 @@ class MovieDetailsActivity : AppCompatActivity() {
     private lateinit var tvReleaseDate: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,7 +108,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        etAboutMovie.setText(intent.getStringExtra("about_name").toString())
+        etAboutMovie.setText(intent.getStringExtra("about_movie").toString())
         etBannerImg.setText(intent.getStringExtra("banner_image_url").toString())
         etCoverImg.setText(intent.getStringExtra("cover_image_url").toString())
         etLanguage.setText(intent.getStringExtra("languages").toString())
@@ -122,7 +122,7 @@ class MovieDetailsActivity : AppCompatActivity() {
         alertDialog.show()
 
         btnUpdateData.setOnClickListener {
-            updateEmpData(
+            updateMovie(
                 movieId,
                 etAboutMovie.text.toString(),
                 etBannerImg.text.toString(),
@@ -131,8 +131,6 @@ class MovieDetailsActivity : AppCompatActivity() {
                 etMovieDuration.text.toString(),
                 etMovieName.text.toString(),
                 etReleaseDate.text.toString(),
-
-
                 )
 
             Toast.makeText(applicationContext, "Movie Updated Successfully!", Toast.LENGTH_LONG).show()
@@ -146,12 +144,11 @@ class MovieDetailsActivity : AppCompatActivity() {
             tvMovieName.text = etMovieName.text.toString()
             tvReleaseDate.text = etReleaseDate.text.toString()
 
-
             alertDialog.dismiss()
         }
     }
 
-    private fun updateEmpData(
+    private fun updateMovie(
         movieId: String,
         about_movie: String,
         banner_image_url: String,
@@ -175,5 +172,4 @@ class MovieDetailsActivity : AppCompatActivity() {
         )
         dbRef.setValue(movieInfo)
     }
-
 }

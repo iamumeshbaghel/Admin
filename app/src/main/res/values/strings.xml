@@ -16,4 +16,6 @@
     <string name="fetch">Fetch</string>
     <string name="btnadd">Add</string>
     <string name="insert">Insert</string>
+    <string name="movie_name">Movie Name:</string>
+    <string name="loading">Loading...</string>
 </resources>

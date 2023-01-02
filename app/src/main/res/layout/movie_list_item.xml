@@ -5,39 +5,57 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
-    app:cardCornerRadius="8dp"
     android:layout_margin="8dp"
     tools:ignore="MissingDefaultResource">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:background="@color/purple_200">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/movie_name"
+                android:fontFamily="@font/manrope_bold"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4">
 
             <TextView
                 android:id="@+id/tvMovieName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Movie Name"
-                android:fontFamily="@font/manrope_bold"
-                android:maxLines="1"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:text=""
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textSize="15sp"
 
+                />
 
         </LinearLayout>
+
 
     </LinearLayout>
 
